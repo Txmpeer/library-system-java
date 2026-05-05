@@ -76,6 +76,22 @@ javac *.java
 java PruebaProy
 ```
 
+## 💻 Ejemplo de código
+
+A continuación se muestra un fragmento de la lógica de préstamo de libros:
+
+```java
+public void prestarLibro(String titulo, Membresia usuario) {
+    Libro libro = buscarLibro(titulo);
+    if (libro != null && libro.disponible()) {
+        libro.prestar();
+        usuario.agregarPrestamo(libro);
+    } else {
+        System.out.println("El libro no está disponible");
+    }
+}
+```
+
 🔄 Funcionamiento general
 
 El sistema sigue una arquitectura tipo MVC simplificada:
